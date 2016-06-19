@@ -187,21 +187,20 @@
                     </includes>
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>com.wix</groupId>-->
-                <!--<artifactId>wix-oss-ci-police</artifactId>-->
-                <!--<version>1.1.0</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>wix-oss-ci-police</id>-->
-                        <!--<phase>validate</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>wix-oss-ci-police</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
-
+            <plugin>
+                <groupId>com.wix</groupId>
+                <artifactId>wix-oss-ci-police</artifactId>
+                <version>1.1.0</version>
+                <executions>
+                    <execution>
+                        <id>wix-oss-ci-police</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>wix-oss-ci-police</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 

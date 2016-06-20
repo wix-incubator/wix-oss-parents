@@ -6,7 +6,7 @@
     <artifactId>wix-oss-java-parent</artifactId>
     <version>1.5.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>SPoT</name>
+    <name>Wix OSS Java Parent</name>
     <description>
         The Single Point of Truth for all Wix Java Open Source projects.
         This POM artifact should be the parent for all Wix Java open source projects.

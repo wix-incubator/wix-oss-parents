@@ -92,6 +92,7 @@
         <maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
         <maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <wix-oss-ci-police.version>1.1.0</wix-oss-ci-police.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.source.version>1.8</java.source.version>
@@ -138,6 +139,26 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven.failsafe.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary.xml</summaryFile>
+                        <includes>
+                            <include>**/*IT.java</include>
+                            <include>**/*E2E.java</include>
+                        </includes>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -166,27 +187,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>${maven.failsafe.plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary.xml</summaryFile>
-                    <includes>
-                        <include>**/*IT.*</include>
-                        <include>**/*E2E.*</include>
-                    </includes>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.wix</groupId>
                 <artifactId>wix-oss-ci-police</artifactId>
-                <version>1.1.0</version>
+                <version>${wix-oss-ci-police.version}</version>
                 <executions>
                     <execution>
                         <id>wix-oss-ci-police</id>

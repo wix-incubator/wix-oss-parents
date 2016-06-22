@@ -93,6 +93,7 @@
         <maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
         <wix-oss-ci-police.version>1.1.0</wix-oss-ci-police.version>
+        <ci-police.skip>true</ci-police.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.source.version>1.8</java.source.version>

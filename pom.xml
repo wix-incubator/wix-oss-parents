@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wix</groupId>
+    <artifactId>wix-oss-java-parent</artifactId>
+    <version>1.5.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Wix OSS Java Parent</name>
+    <description>
+        The Single Point of Truth for all Wix Java Open Source projects.
+        This POM artifact should be the parent for all Wix Java open source projects.
+        It includes the various (common) Maven plugins, the GPG signing profile, organization element, licenses,
+        distribution management, and common dependencies
+    </description>
+    <url>https://github.com/wix/wix-oss-java-parent</url>
+
+    <organization>
+        <name>wix.com</name>
+        <url>http://wix.io</url>
+    </organization>
+
+    <scm>
+        <url>https://github.com/wix/wix-oss-java-parent</url>
+        <connection>scm:git:git://github.com/wix/wix-oss-java-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:wix/wix-oss-java-parent.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <url>https://github.com/wix/wix-oss-java-parent/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>    
+    
+    <licenses>
+        <license>
+            <name>modified BSD License</name>
+            <url>https://github.com/wix/wix-oss-java-parent/LICENSE.md</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+
+    <developers>
+        <developer>
+            <name>Ohad Raz</name>
+            <email>ohadr@wix.com</email>
+            <roles>
+                <role>owner</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Igal Harel</name>
+            <email>igalh@wix.com</email>
+            <roles>
+                <role>owner</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Dima Goltsman</name>
+            <email>dimitrig@wix.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Shachar Ancheloivch</name>
+            <email>shacharan@wix.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
+        <maven.source.plugin.version>3.0.0</maven.source.plugin.version>
+        <nexus.staging.maven.plugin.version>1.6.7</nexus.staging.maven.plugin.version>
+        <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+        <maven.scm.provider.gitexe.version>1.9.4</maven.scm.provider.gitexe.version>
+        <maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
+        <maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>
+        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <wix-oss-ci-police.version>1.1.0</wix-oss-ci-police.version>
+        <ci-police.skip>true</ci-police.skip>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        <gpg.key>F3FA6878</gpg.key>
+    </properties>
+
+    <build>
+        <testResources>
+            <testResource>
+                <directory>${project.basedir}/src/test/resources</directory>
+            </testResource>
+            <testResource>
+                <directory>${project.basedir}/src/it/resources</directory>
+            </testResource>
+            <testResource>
+                <directory>${project.basedir}/src/e2e/resources</directory>
+            </testResource>
+        </testResources>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.10</version>
+                    <executions>
+                        <execution>
+                            <id>add-resource</id>
+                            <phase>generate-test-sources</phase>
+                            <goals>
+                                <goal>add-test-resource</goal>
+                            </goals>
+                            <configuration>
+                                <resources>
+                                    <resource>
+                                        <directory>src/it/resources</directory>
+                                    </resource>
+                                    <resource>
+                                        <directory>src/e2e/resources</directory>
+                                    </resource>
+                                </resources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven.failsafe.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary.xml</summaryFile>
+                        <includes>
+                            <include>**/*IT.java</include>
+                            <include>**/*E2E.java</include>
+                        </includes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${java.source.version}</source>
+                    <target>${java.target.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+                <configuration>
+                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.wix</groupId>
+                <artifactId>wix-oss-ci-police</artifactId>
+                <version>${wix-oss-ci-police.version}</version>
+                <executions>
+                    <execution>
+                        <id>wix-oss-ci-police</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>wix-oss-ci-police</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <profiles>
+        <profile>
+            <id>sign-artifacts</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven.source.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>${nexus.staging.maven.plugin.version}</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <version>${maven.release.plugin.version}</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.apache.maven.scm</groupId>
+                                <artifactId>maven-scm-provider-gitexe</artifactId>
+                                <version>${maven.scm.provider.gitexe.version}</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven.gpg.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <keyname>${gpg.key}</keyname>
+                                    <passphraseServerId>${gpg.key}</passphraseServerId>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

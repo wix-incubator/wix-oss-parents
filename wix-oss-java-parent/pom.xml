@@ -31,14 +31,6 @@
         <url>https://github.com/wix/wix-oss-java-parent/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>    
-    
-    <licenses>
-        <license>
-            <name>modified BSD License</name>
-            <url>https://github.com/wix/wix-oss-parents/wix-oss-superduper-license-certified-by-legal/LICENSE.md</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
 
     <distributionManagement>
         <snapshotRepository>
@@ -168,15 +160,22 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
                 <version>1.9</version>
+                <configuration>
+                    <licenseName>wix_license</licenseName>
+                    <inceptionYear>2016</inceptionYear>
+                    <licenseFile>LICENSE.md</licenseFile>
+                    <force>true</force>
+                    <licenseResolver>
+                        https://raw.githubusercontent.com/wix/wix-oss-parents/master/wix-oss-superduper-license-certified-by-legal
+                    </licenseResolver>
+                </configuration>
                 <executions>
                     <execution>
                         <id>download-licenses</id>
                         <goals>
-                            <goal>download-licenses</goal>
+                            <goal>update-project-license</goal>
                         </goals>
-                        <configuration>
-                            <licenseName>modified BSD License</licenseName>
-                        </configuration>
+                        <phase>process-sources</phase>
                     </execution>
                 </executions>
             </plugin>

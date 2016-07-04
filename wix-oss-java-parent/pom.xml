@@ -175,6 +175,26 @@
                         <goals>
                             <goal>update-project-license</goal>
                         </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.9.4</version>
+                <configuration>
+                    <includes>LICENSE.md</includes>
+                    <message>License update</message>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>git-license</id>
+                        <goals>
+                            <goal>update</goal>
+                            <goal>add</goal>
+                            <goal>checkin</goal>
+                        </goals>
                         <phase>process-sources</phase>
                     </execution>
                 </executions>

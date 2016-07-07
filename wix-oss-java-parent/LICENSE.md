@@ -1,4 +1,3 @@
-
 Copyright (c) 2015, Wix.com Ltd.
 All rights reserved.
 

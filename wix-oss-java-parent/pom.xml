@@ -21,9 +21,9 @@
     </organization>
 
     <scm>
-        <url>https://github.com/wix/wix-oss-java-parent</url>
-        <connection>scm:git:git://github.com/wix/wix-oss-java-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:wix/wix-oss-java-parent.git</developerConnection>
+        <url>https://github.com/wix/wix-oss-parents</url>
+        <connection>scm:git:git://github.com/wix/wix-oss-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:wix/wix-oss-parents.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
@@ -182,7 +182,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-scm-plugin</artifactId>
-                <version>1.9.4</version>
+                <version>1.9.6-WIX</version>
                 <configuration>
                     <includes>LICENSE.md</includes>
                     <message>License update</message>

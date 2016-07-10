@@ -1,1 +1,1 @@
-# wix-oss-java-parent
+# wix-oss-parents

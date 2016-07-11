@@ -22,7 +22,7 @@
 
     <scm>
         <url>https://github.com/wix/wix-oss-parents</url>
-        <connection>scm:git:git://github.com/wix/wix-oss-parent.git</connection>
+        <connection>scm:git:git://github.com/wix/wix-oss-parents.git</connection>
         <developerConnection>scm:git:git@github.com:wix/wix-oss-parents.git</developerConnection>
         <tag>HEAD</tag>
     </scm>

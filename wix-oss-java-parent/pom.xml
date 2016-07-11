@@ -186,7 +186,7 @@
                 <configuration>
                     <includes>LICENSE.md</includes>
                     <message>License update</message>
-                    <connectionUrl>${scm.developerConnection}</connectionUrl>
+                    <connectionUrl>${project.scm.developerConnection}</connectionUrl>
                 </configuration>
                 <executions>
                     <execution>

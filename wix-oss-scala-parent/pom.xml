@@ -4,7 +4,7 @@
 
     <groupId>com.wix</groupId>
     <artifactId>wix-oss-scala-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Wix OSS Scala Parent</name>
     <description>
@@ -18,7 +18,7 @@
     <parent>
         <groupId>com.wix</groupId>
         <artifactId>wix-oss-java-parent</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.2.0-SNAPSHOT</version>
         <relativePath>../wix-oss-java-parent/pom.xml</relativePath>
     </parent>
 
@@ -232,4 +232,3 @@
         </plugins>
     </build>
 </project>
-

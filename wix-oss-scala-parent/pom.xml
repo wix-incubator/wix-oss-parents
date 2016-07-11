@@ -28,12 +28,12 @@
     </organization>
 
     <scm>
-        <url>https://github.com/wix/wix-oss-scala-parent</url>
-        <connection>scm:git:git://github.com/wix/wix-oss-scala-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:wix/wix-oss-scala-parent.git</developerConnection>
+        <url>https://github.com/wix/wix-oss-parents</url>
+        <connection>scm:git:git://github.com/wix/wix-oss-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:wix/wix-oss-parents.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-
+    
     <issueManagement>
         <url>https://github.com/wix/wix-oss-scala-parent/issues</url>
         <system>GitHub Issues</system>

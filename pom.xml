@@ -119,6 +119,8 @@
                             <includes>LICENSE.md</includes>
                             <message>License update</message>
                             <connectionUrl>${project.scm.developerConnection}</connectionUrl>
+                            <scmVersion>origin/master</scmVersion>
+                            <scmVersionType>branch</scmVersionType>
                         </configuration>
                         <executions>
                             <execution>

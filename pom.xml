@@ -67,6 +67,15 @@
     </developers>
 
 
+    <properties>
+        <nexus.staging.maven.plugin.version>1.6.7</nexus.staging.maven.plugin.version>
+        <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+        <maven.scm.provider.gitexe.version>1.9.4</maven.scm.provider.gitexe.version>
+        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <gpg.key>F3FA6878</gpg.key>
+    </properties>
+
+
     <modules>
         <module>wix-oss-java-parent</module>
         <module>wix-oss-scala-parent</module>
@@ -120,19 +129,6 @@
                                     <goal>checkin</goal>
                                 </goals>
                                 <phase>process-sources</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven.source.plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
                             </execution>
                         </executions>
                     </plugin>

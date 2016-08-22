@@ -6,20 +6,20 @@
     <artifactId>wix-oss-java-parent</artifactId>
     <version>0.9.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Wix OSS Java Parent</name>
+    <name>WOJ</name>
     <description>
         The Single Point of Truth for all Wix Java Open Source projects.
         This POM artifact should be the parent for all Wix Java open source projects.
         It includes the various (common) Maven plugins, the GPG signing profile, organization element, licenses,
         distribution management, and common dependencies
     </description>
-    <url>https://github.com/wix/wix-oss-java-parent</url>
+    <url>https://github.com/wix/wix-oss-parents</url>
 
     <parent>
         <groupId>com.wix</groupId>
         <artifactId>wix-oss-parents</artifactId>
         <version>0.9.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../wix-oss-parents-parent/pom.xml</relativePath>
     </parent>
 
 
@@ -222,5 +222,4 @@
             </build>
         </profile>
     </profiles>
-
 </project>

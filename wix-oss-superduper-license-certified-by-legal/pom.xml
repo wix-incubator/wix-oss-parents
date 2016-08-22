@@ -26,9 +26,9 @@
     </organization>
 
     <scm>
-        <url>https://github.com/wix/wix-oss-parents/wix-oss-superduper-license-certified-by-legal</url>
-        <connection>scm:git:git://github.com/wix/wix-oss-parents/wix-oss-superduper-license-certified-by-legal.git</connection>
-        <developerConnection>scm:git:git@github.com:wix/wix-oss-parents/wix-oss-superduper-license-certified-by-legal.git</developerConnection>
+        <url>https://github.com/wix/wix-oss-parents</url>
+        <connection>scm:git:git://github.com/wix/wix-oss-parents.git</connection>
+        <developerConnection>scm:git:git@github.com:wix/wix-oss-parents.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 

@@ -19,6 +19,8 @@
         <maven.scm.provider.gitexe.version>1.9.4</maven.scm.provider.gitexe.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
         <gpg.key>F3FA6878</gpg.key>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
 

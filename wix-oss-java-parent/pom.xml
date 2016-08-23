@@ -88,6 +88,7 @@
         <maven.source.plugin.version>3.0.0</maven.source.plugin.version>
         <maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
         <maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>
+        <build.helper.maven.plugin.version>1.10</build.helper.maven.plugin.version>
         <wix-oss-ci-police.version>1.1.0</wix-oss-ci-police.version>
         <ci-police.skip>true</ci-police.skip>
         <java.source.version>1.8</java.source.version>
@@ -112,7 +113,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>1.10</version>
+                    <version>${build.helper.maven.plugin.version}</version>
                     <executions>
                         <execution>
                             <id>add-resource</id>
@@ -153,8 +154,53 @@
                         </includes>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven.source.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <source>${java.source.version}</source>
+                        <target>${java.target.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire.plugin.version}</version>
+                    <configuration>
+                        <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.wix</groupId>
+                    <artifactId>wix-oss-ci-police</artifactId>
+                    <version>${wix-oss-ci-police.version}</version>
+                    <executions>
+                        <execution>
+                            <id>wix-oss-ci-police</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>wix-oss-ci-police</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
+
 
         <plugins>
             <plugin>
@@ -164,19 +210,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.compiler.plugin.version}</version>
-                <configuration>
-                    <source>${java.source.version}</source>
-                    <target>${java.target.version}</target>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surefire.plugin.version}</version>
-                <configuration>
-                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -185,16 +222,6 @@
             <plugin>
                 <groupId>com.wix</groupId>
                 <artifactId>wix-oss-ci-police</artifactId>
-                <version>${wix-oss-ci-police.version}</version>
-                <executions>
-                    <execution>
-                        <id>wix-oss-ci-police</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>wix-oss-ci-police</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
@@ -208,15 +235,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven.source.plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                 </plugins>
             </build>

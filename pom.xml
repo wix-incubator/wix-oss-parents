@@ -12,6 +12,13 @@
     </description>
     <url>https://github.com/wix/wix-oss-parents</url>
 
+
+    <parent>
+        <groupId>com.wix</groupId>
+        <artifactId>wix-oss-parents-parent</artifactId>
+        <version>0.16.0-SNAPSHOT</version>
+        <relativePath>./wix-oss-parents-parent/pom.xml</relativePath>
+    </parent>
     <organization>
         <name>wix.com</name>
         <url>http://wix.io</url>

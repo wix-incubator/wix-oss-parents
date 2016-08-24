@@ -49,30 +49,6 @@
         </repository>
     </distributionManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <version>1.9</version>
-                <configuration>
-                    <inceptionYear>2016</inceptionYear>
-                    <licenseName>wix_license</licenseName>
-                    <licenseResolver>${project.baseUri}</licenseResolver>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>first</id>
-                        <goals>
-                            <goal>update-file-header</goal>
-                        </goals>
-                        <phase>process-sources</phase>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
 
     <developers>
         <developer>

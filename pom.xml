@@ -4,7 +4,7 @@
 
     <groupId>com.wix</groupId>
     <artifactId>wix-oss-parents</artifactId>
-    <version>0.17.0</version>
+    <version>0.18.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>WOPA</name>
     <description>
@@ -16,7 +16,7 @@
     <parent>
         <groupId>com.wix</groupId>
         <artifactId>wix-oss-parents-parent</artifactId>
-        <version>0.17.0</version>
+        <version>0.18.0-SNAPSHOT</version>
         <relativePath>./wix-oss-parents-parent/pom.xml</relativePath>
     </parent>
     <organization>
@@ -28,7 +28,7 @@
         <url>https://github.com/wix/wix-oss-parents</url>
         <connection>scm:git:git://github.com/wix/wix-oss-parents.git</connection>
         <developerConnection>scm:git:git@github.com:wix/wix-oss-parents.git</developerConnection>
-        <tag>0.17.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <issueManagement>

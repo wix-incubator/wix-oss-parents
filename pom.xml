@@ -76,8 +76,8 @@
 
     <modules>
         <module>wix-oss-parents-parent</module>
-        <module>wix-oss-superduper-license-certified-by-legal</module>
-        <module>wix-oss-java-parent</module>
-        <module>wix-oss-scala-parent</module>
+        <!--<module>wix-oss-superduper-license-certified-by-legal</module>-->
+        <!--<module>wix-oss-java-parent</module>-->
+        <!--<module>wix-oss-scala-parent</module>-->
     </modules>
 </project>

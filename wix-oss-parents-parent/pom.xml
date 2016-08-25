@@ -140,7 +140,7 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <version>${maven.release.plugin.version}</version>
                     <configuration>
-                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <!--<autoVersionSubmodules>true</autoVersionSubmodules>-->
                         <useReleaseProfile>false</useReleaseProfile>
                         <releaseProfiles>sign-artifacts</releaseProfiles>
                         <goals>deploy</goals>

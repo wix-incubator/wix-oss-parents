@@ -142,7 +142,7 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useReleaseProfile>false</useReleaseProfile>
-                        <releaseProfiles>release</releaseProfiles>
+                        <releaseProfiles>sign-artifacts</releaseProfiles>
                         <goals>deploy</goals>
                     </configuration>
                     <dependencies>

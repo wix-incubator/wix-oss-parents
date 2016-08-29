@@ -157,7 +157,7 @@
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${nexus.staging.maven.plugin.version}</version>
                     <configuration>
-                        <serverId>sonatype-nexus-snapshots</serverId>
+                        <serverId>sonatype-nexus-releases</serverId>
                         <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                         <autoReleaseAfterClose>false</autoReleaseAfterClose>
                     </configuration>

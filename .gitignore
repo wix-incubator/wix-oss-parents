@@ -1,4 +1,6 @@
 target
 .idea
 *.iml
+*.releaseBackup
+release.properties
 

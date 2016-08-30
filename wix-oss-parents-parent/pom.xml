@@ -16,7 +16,7 @@
     <properties>
         <nexus.staging.maven.plugin.version>1.6.7</nexus.staging.maven.plugin.version>
         <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
-        <maven.scm.plugin.version>1.9.6-WIX</maven.scm.plugin.version>
+        <maven.scm.plugin.version>1.9.4</maven.scm.plugin.version>
         <maven.scm.provider.gitexe.version>1.9.4</maven.scm.provider.gitexe.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
         <maven.source.plugin.version>3.0.0</maven.source.plugin.version>

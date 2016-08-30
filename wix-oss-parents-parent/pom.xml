@@ -4,7 +4,7 @@
 
     <groupId>com.wix</groupId>
     <artifactId>wix-oss-parents-parent</artifactId>
-    <version>0.34.0-SNAPSHOT</version>
+    <version>0.33.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>WOPPA</name>
     <description>
@@ -16,7 +16,7 @@
     <properties>
         <nexus.staging.maven.plugin.version>1.6.7</nexus.staging.maven.plugin.version>
         <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
-        <maven.scm.plugin.version>1.9.5</maven.scm.plugin.version>
+        <maven.scm.plugin.version>1.9.6-WIX</maven.scm.plugin.version>
         <maven.scm.provider.gitexe.version>1.9.4</maven.scm.provider.gitexe.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
         <maven.source.plugin.version>3.0.0</maven.source.plugin.version>
@@ -103,29 +103,29 @@
                         </execution>
                     </executions>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-scm-plugin</artifactId>
-                    <version>${maven.scm.plugin.version}</version>
-                    <configuration>
-                        <includes>LICENSE.md</includes>
-                        <message>License update</message>
-                        <connectionUrl>${project.scm.developerConnection}</connectionUrl>
-                        <scmVersion>HEAD</scmVersion>
-                        <scmVersionType>branch</scmVersionType>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>git-license</id>
-                            <goals>
-                                <goal>update</goal>
-                                <goal>add</goal>
-                                <goal>checkin</goal>
-                            </goals>
-                            <phase>process-sources</phase>
-                        </execution>
-                    </executions>
-                </plugin>
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-scm-plugin</artifactId>-->
+                    <!--<version>${maven.scm.plugin.version}</version>-->
+                    <!--<configuration>-->
+                        <!--<includes>LICENSE.md</includes>-->
+                        <!--<message>License update</message>-->
+                        <!--<connectionUrl>${project.scm.developerConnection}</connectionUrl>-->
+                        <!--<scmVersion>HEAD</scmVersion>-->
+                        <!--<scmVersionType>branch</scmVersionType>-->
+                    <!--</configuration>-->
+                    <!--<executions>-->
+                        <!--<execution>-->
+                            <!--<id>git-license</id>-->
+                            <!--<goals>-->
+                                <!--<goal>update</goal>-->
+                                <!--<goal>add</goal>-->
+                                <!--<goal>checkin</goal>-->
+                            <!--</goals>-->
+                            <!--<phase>process-sources</phase>-->
+                        <!--</execution>-->
+                    <!--</executions>-->
+                <!--</plugin>-->
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -218,10 +218,10 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>license-maven-plugin</artifactId>
                     </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-scm-plugin</artifactId>
-                    </plugin>
+                    <!--<plugin>-->
+                        <!--<groupId>org.apache.maven.plugins</groupId>-->
+                        <!--<artifactId>maven-scm-plugin</artifactId>-->
+                    <!--</plugin>-->
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>

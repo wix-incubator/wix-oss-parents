@@ -111,8 +111,6 @@
                         <includes>LICENSE.md</includes>
                         <message>License update</message>
                         <connectionUrl>${project.scm.developerConnection}</connectionUrl>
-                        <scmVersion>HEAD</scmVersion>
-                        <scmVersionType>branch</scmVersionType>
                     </configuration>
                     <executions>
                         <execution>
@@ -120,7 +118,6 @@
                             <goals>
                                 <goal>update</goal>
                                 <goal>add</goal>
-                                <goal>checkin</goal>
                             </goals>
                             <phase>process-sources</phase>
                         </execution>

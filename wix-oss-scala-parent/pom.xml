@@ -6,12 +6,11 @@
     <artifactId>wix-oss-scala-parent</artifactId>
     <version>0.38.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>WOSP</name>
+    <name>WOS</name>
     <description>
-        The Single Point of Truth for all Scala Wix Open Source projects.
-        This POM artifact should be the parent for all Wix open source projects.
-        It includes the various (common) Maven plugins, the GPG signing profile, organization element, licenses,
-        distribution management, and common dependencies (e.g., Scala)
+        The Parent for all Scala Wix Open Source Scala projects.
+        This POM artifact should be the parent for all Wix Scala open source projects.
+        In addition to the Java Parent, it includes the various (common) Scala related Maven plugins and versions.
     </description>
     <url>https://github.com/wix/wix-oss-parents</url>
 

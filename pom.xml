@@ -41,7 +41,7 @@
     <licenses>
         <license>
             <name>modified BSD License</name>
-            <url>https://github.com/wix/wix-oss-parents/wix-oss-superduper-license-certified-by-legal/LICENSE.md</url>
+            <url>https://raw.githubusercontent.com/wix/wix-oss-parents/master/LICENSE.md</url>
             <distribution>repo</distribution>
         </license>
     </licenses>

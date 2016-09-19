@@ -21,11 +21,6 @@
         <relativePath>../wix-oss-java-parent/pom.xml</relativePath>
     </parent>
 
-    <organization>
-        <name>wix.com</name>
-        <url>http://wix.io</url>
-    </organization>
-
     <scm>
         <url>https://github.com/wix/wix-oss-parents</url>
         <connection>scm:git:git://github.com/wix/wix-oss-parents.git</connection>
@@ -33,29 +28,6 @@
         <tag>HEAD</tag>
     </scm>
     
-    <issueManagement>
-        <url>https://github.com/wix/wix-oss-scala-parent/issues</url>
-        <system>GitHub Issues</system>
-    </issueManagement>
-
-    <licenses>
-        <license>
-            <name>modified BSD License</name>
-            <url>https://github.com/wix/wix-oss-scala-parent/LICENSE.md</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <developers>
         <developer>

@@ -22,35 +22,12 @@
         <relativePath>../wix-oss-parent/pom.xml</relativePath>
     </parent>
 
-
-    <organization>
-        <name>wix.com</name>
-        <url>http://wix.io</url>
-    </organization>
-
     <scm>
         <url>https://github.com/wix/wix-oss-parents</url>
         <connection>scm:git:git://github.com/wix/wix-oss-parents.git</connection>
         <developerConnection>scm:git:git@github.com:wix/wix-oss-parents.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-
-    <issueManagement>
-        <url>https://github.com/wix/wix-oss-java-parent/issues</url>
-        <system>GitHub Issues</system>
-    </issueManagement>    
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
 
     <developers>
         <developer>
@@ -88,8 +65,6 @@
         <maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
         <maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>
         <build.helper.maven.plugin.version>1.10</build.helper.maven.plugin.version>
-        <wix-oss-ci-police.version>1.1.0</wix-oss-ci-police.version>
-        <ci-police.skip>true</ci-police.skip>
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
     </properties>
@@ -170,20 +145,6 @@
                         <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>com.wix</groupId>
-                    <artifactId>wix-oss-ci-police</artifactId>
-                    <version>${wix-oss-ci-police.version}</version>
-                    <executions>
-                        <execution>
-                            <id>wix-oss-ci-police</id>
-                            <phase>validate</phase>
-                            <goals>
-                                <goal>wix-oss-ci-police</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -204,10 +165,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>com.wix</groupId>
-                <artifactId>wix-oss-ci-police</artifactId>
             </plugin>
         </plugins>
     </build>

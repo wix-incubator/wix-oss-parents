@@ -26,6 +26,8 @@
         <maven.javadoc.plugin.version>2.10.4</maven.javadoc.plugin.version>
         <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
         <license.maven.plugin.version>1.9</license.maven.plugin.version>
+        <wix-oss-ci-police.version>1.0.0</wix-oss-ci-police.version>
+        <ci-police.skip>true</ci-police.skip>
 
         <gpg.key>F3FA6878</gpg.key>
 
@@ -54,7 +56,7 @@
     <licenses>
         <license>
             <name>modified BSD License</name>
-            <url>https://github.com/wix/wix-oss-parents/wix-oss-superduper-license-certified-by-legal/LICENSE.md</url>
+            <url>https://raw.githubusercontent.com/wix/wix-oss-parents/master/LICENSE.md</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -103,6 +105,20 @@
                                 <goal>update-project-license</goal>
                             </goals>
                             <phase>generate-sources</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>com.wix</groupId>
+                    <artifactId>wix-oss-ci-police</artifactId>
+                    <version>${wix-oss-ci-police.version}</version>
+                    <executions>
+                        <execution>
+                            <id>wix-oss-ci-police</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>wix-oss-ci-police</goal>
+                            </goals>
                         </execution>
                     </executions>
                 </plugin>
@@ -185,6 +201,14 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+
+        <plugins>
+            <plugin>
+                <groupId>com.wix</groupId>
+                <artifactId>wix-oss-ci-police</artifactId>
+            </plugin>
+        </plugins>
     </build>
 
 

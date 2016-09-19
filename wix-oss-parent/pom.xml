@@ -148,6 +148,7 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <releaseProfiles>sign-artifacts</releaseProfiles>
+                        <preparationGoals>clean verify -DisRelease=true</preparationGoals>
                         <goals>deploy</goals>
                     </configuration>
                     <dependencies>

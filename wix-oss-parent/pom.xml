@@ -27,7 +27,7 @@
         <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
         <license.maven.plugin.version>1.9</license.maven.plugin.version>
         <wix-oss-ci-police.version>1.0.0</wix-oss-ci-police.version>
-        <ci-police.skip>true</ci-police.skip>
+        <ci-police.skip>false</ci-police.skip>
 
         <gpg.key>F3FA6878</gpg.key>
 

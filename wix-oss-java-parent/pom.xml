@@ -4,7 +4,7 @@
 
     <groupId>com.wix</groupId>
     <artifactId>wix-oss-java-parent</artifactId>
-    <version>0.44.0</version>
+    <version>0.45.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>WOJ</name>
     <description>
@@ -18,7 +18,7 @@
     <parent>
         <groupId>com.wix</groupId>
         <artifactId>wix-oss-parent</artifactId>
-        <version>0.44.0</version>
+        <version>0.45.0-SNAPSHOT</version>
         <relativePath>../wix-oss-parent/pom.xml</relativePath>
     </parent>
 
@@ -26,7 +26,7 @@
         <url>https://github.com/wix/wix-oss-parents</url>
         <connection>scm:git:git://github.com/wix/wix-oss-parents.git</connection>
         <developerConnection>scm:git:git@github.com:wix/wix-oss-parents.git</developerConnection>
-        <tag>0.44.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>

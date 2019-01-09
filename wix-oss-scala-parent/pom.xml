@@ -74,7 +74,7 @@
     <properties>
         <scala.maven.plugin.version>3.2.2</scala.maven.plugin.version>
         <scala.dependencies.version>2.12</scala.dependencies.version>
-        <scala.version>2.12.4</scala.version>
+        <scala.version>2.12.6</scala.version>
         <specs2.version>3.8.9</specs2.version>
     </properties>
 
